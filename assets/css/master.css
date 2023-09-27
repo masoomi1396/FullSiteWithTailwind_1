@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn{
+    @apply bg-color-secondary px-9 py-3 rounded-md font-bold capitalize hover:opacity-80 transition duration-300;
+}
+.cardBtn{
+    @apply w-full px-9 py-3 bg-color-primary-dark rounded-md font-bold capitalize hover:bg-color-secondary duration-300   
+}
+.title{
+    @apply text-3xl md:text-4xl font-bold leading-snug mb-4 capitalize;
+}
+.subTitle{
+    @apply capitalize text-color-secondary mb-4 font-bold;
+}
+.blobPurple{
+    @apply w-80 h-80 bg-color-blob absolute -left-5 top-0 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full;
+}
+.blobYellow{
+    @apply w-80 h-80 bg-color-secondary absolute bottom-10 right-0 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full;
+}
+.cardLineImage{
+    @apply lg:after:content-[''] lg:after:flex lg:after:absolute lg:after:top-4 lg:after:left-32 2xl:after:left-52 lg:after:bg-no-repeat lg:after:h-7 lg:after:w-52;
+}
+.userImage{                      
+    @apply w-20 h-20 rounded-full p-1 m-3 cursor-pointer;
+}
+.active-pic{
+    border: 2px solid #ff7d3b;
+}
+.user-text{
+    display: none;
+}
+.user-pic{
+    transition: 0.3s;
+}
+.user-text.active-text{
+    display: block;
+    animation: moveUp 1s linear forwards;
+}
+@keyframes moveUp{
+    0%{
+        margin-top: 40px;
+        opacity: 0;
+    }
+    50%{
+        margin-top: 20px;
+        opacity: 0.1;
+    }
+    100%{
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+.card{
+    perspective: 1000px;
+}
+.front,.back{
+    backface-visibility: hidden;
+    transition: all 0.5s ease;
+}
+.front{
+    overflow: hidden;
+}
